@@ -77,6 +77,9 @@ POST requests look like this:
 >building material such as ``stone``
 
 
+
+
+
 ## GET requests
 
 GET requests give you all the information about the surrounding area.
@@ -101,13 +104,6 @@ You should always specify the information that you want to acquire.
 To do so, use the ``information`` property as a list that might contain the following elements:
 * ``map``
 >The map is a representation of the world that will help you find your way in this magnificent world. This property returns the surrounding area that the player can see, depending on how high he is, his sight accuracy, and so on.
-> * Height Levels:
->  * Sea
->  * Beach
->  * Ground
->  * Hill
->  * Mountain
->  * Sky (lol)
 >- - -
 > Example: Let's imagine the total sight of your player is 1, the API will return a 3x3 area starting from the top-left (-1, -1) to the bottom-right (1, 1):
 ```json
@@ -171,7 +167,12 @@ the API will return a json with this format:
 > next timestamp at which it will be possible to exexute an action from a bot again
 
 
+
+
+
 ## World Organization
+
+### Height levels
 
 | Height Levels | Value |
 |---------------|-------|
@@ -189,25 +190,83 @@ the API will return a json with this format:
 | Sky           | 6     |
 | Heaven & Hell | 7     |
 
+### Existing Materials
+
+* Sand
+* Water
+* Coal
+* Silver
+* Gold
+* Diamond
+
+
 
 
 
 ## Things you can build
 (maybe this should remain secret)
 
-### Train units
+### Training units
 
 * City Hall
-* Military base
-*
+* Military Base
+* Witch
 
 ### Resources
 
-* Research Workshop (crafting box?)
 * Mine
-*
+* Sawmill (scierie en français)
 
-### Others
+### Research
 
-* Teleportation Portal
-*
+* Workshop (crafting box?) (atelier en français)
+* Laboratory
+
+### Food
+
+* Farm
+
+### Transportation (each has a different speed)
+
+* Boats
+* Teleportation Portal (convenient but very expensive - can be found at some places)
+
+### Ancient buildings
+
+* Dungeons
+* Hell & Heaven portal
+
+
+
+
+
+## Units you can face
+
+### Casual units
+
+* Humans like you
+* Vagabonds you can encounter
+
+### Jobs (when you find a non-violent vagabond, you can ask him to work for you)
+
+* Scientist
+* Soldier
+* Witch
+* Worker
+
+### Animals
+
+* Pokemons
+
+### Sci-fi creatures
+
+* Skeletons
+* Zombies
+
+### Mechanical
+
+* Machines (like the bots you can create)
+
+### Ancient creatures
+
+* Dragons
