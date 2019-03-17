@@ -11,8 +11,9 @@ a = Apibot(5,5)
 
 @app.route('/', methods=['GET'])
 def home():
-    return '''<h1>Distant Reading Archive</h1>
-<p>A prototype API for distant reading of science fiction novels.</p>'''
+    return '''<h1>API Game</h1>
+<p>This API should be called using get and post requests.
+Please read the rules markdown file first.</p>'''
 
 
 # A route to return all of the available entries in our catalog.

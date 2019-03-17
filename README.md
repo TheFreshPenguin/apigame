@@ -1,6 +1,6 @@
 
 
-Welcome to the first API-based game ever. The goal of the game is to manage a fleet of bots on a unexplored mysterious land. Program and optimize your own client that will control your army of bots and make them Mine, collect, build, farm ressources.
+Welcome to the first MMO-API-based game ever. The goal of the game is to manage a fleet of bots on a unexplored mysterious land. Program and optimize your own client that will control your army of bots and make them Mine, collect, build, farm resources and survive the hostile environment as well as the other players.
 
 # API requests
 
@@ -108,22 +108,6 @@ To do so, use the ``information`` property as a list that might contain the foll
 >  * Hill
 >  * Mountain
 >  * Sky (lol)
-
-| Level         | Value |
-|---------------|-------|
-|               |       |
-| Underground 4 | -4    |
-| Underground 3 | -3    |
-| Underground 2 | -2    |
-| Underground 1 | -1    |
-| Sea Level     | 0     |
-| Beach         | 1     |
-| Ground        | 2     |
-| Hill          | 3     |
-| Mountain      | 4     |
-| Top           | 5     |
-| Sky           | 10    |
-|               |       |
 >- - -
 > Example: Let's imagine the total sight of your player is 1, the API will return a 3x3 area starting from the top-left (-1, -1) to the bottom-right (1, 1):
 ```json
@@ -154,14 +138,10 @@ To do so, use the ``information`` property as a list that might contain the foll
     }
 }
 ```
-
 * ``inventory``
 * ``others_players``
 * ``thermic_map``
 * ``weather``
-
-
-
 
 
 ## Response
@@ -189,3 +169,45 @@ the API will return a json with this format:
 > information about your surrounding or your bot
 * ``next``:
 > next timestamp at which it will be possible to exexute an action from a bot again
+
+
+## World Organization
+
+| Height Levels | Value |
+|---------------|-------|
+| Bedrock       | -5    |
+| Underground 4 | -4    |
+| Underground 3 | -3    |
+| Underground 2 | -2    |
+| Underground 1 | -1    |
+| Sea Level     | 0     |
+| Beach         | 1     |
+| Ground        | 2     |
+| Hill          | 3     |
+| Mountain      | 4     |
+| Top           | 5     |
+| Sky           | 6     |
+| Heaven & Hell | 7     |
+
+
+
+
+## Things you can build
+(maybe this should remain secret)
+
+### Train units
+
+* City Hall
+* Military base
+*
+
+### Resources
+
+* Research Workshop (crafting box?)
+* Mine
+*
+
+### Others
+
+* Teleportation Portal
+*
