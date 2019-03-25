@@ -6,7 +6,7 @@ from env import *
 # It will later be filled with GET and POST requests to the API instead of generating everything by itself
 class World:
 
-    # TODO: Switch columns with row for better vizualization
+    # TODO: Switch rowumns with col for better vizualization
 
     # Static Attributes
     size = 0
@@ -35,11 +35,11 @@ class World:
         ]
 
         for i in range(World.size - 1):
-            tmp_col = []
+            tmp_row = []
             for j in range(World.size - 1):
                 tmp_tile = possibilities[random.randint(0, len(possibilities) - 1)]
-                tmp_col.append(tmp_tile)
-            World.grid.append(tmp_col)
+                tmp_row.append(tmp_tile)
+            World.grid.append(tmp_row)
         
         # Make player spawn in the middle
         x = len(World.grid)//2
@@ -76,39 +76,39 @@ class World:
         #print("Player coord after:")
         #print(World.player_absolute_coord)
 
-        # TODO: Fix bug when you go to the left border for example, only columns 0 to <player_sight> are returned
-        # We should add as many columns as the difference between <start_col> and 0 and fill them with TILES['OUT_OF_MAP']
+        # TODO: Fix bug when you go to the left border for example, only rowumns 0 to <player_sight> are returned
+        # We should add as many rowumns as the difference between <start_row> and 0 and fill them with TILES['OUT_OF_MAP']
         # TODO: Same thing for each direction
 
-        start_col = World.player_absolute_coord[0]-sight_distance
-        end_col = World.player_absolute_coord[0]+sight_distance
+        start_row = World.player_absolute_coord[POLES['VERTICAL']]-sight_distance
+        end_row = World.player_absolute_coord[POLES['VERTICAL']]+sight_distance
 
-        if start_col < 0:
-            start_col = 0
-        if end_col > World.size - 1:
-            end_col = World.size - 1
-        #print("Start col: " + str(start_col))
-        #print("End col: " + str(end_col))
+        if start_row < 0:
+            start_row = 0
+        if end_row > World.size - 1:
+            end_row = World.size - 1
+        #print("Start row: " + str(start_row))
+        #print("End row: " + str(end_row))
 
-        sub_grid = World.grid[start_col:end_col+1:1]
+        sub_grid = World.grid[start_row:end_row+1:1]
         #print("Sub-grid:")
         #print(sub_grid)
 
-        for i in range(end_col - start_col + 1):
-            start_row = World.player_absolute_coord[1]-sight_distance
-            end_row = World.player_absolute_coord[1]+sight_distance
+        for i in range(end_row - start_row + 1):
+            start_col = World.player_absolute_coord[POLES['HORIZONTAL']]-sight_distance
+            end_col = World.player_absolute_coord[POLES['HORIZONTAL']]+sight_distance
 
-            if start_row < 0:
-                start_row = 0
-            if end_row > World.size - 1:
-                end_row = World.size - 1
+            if start_col < 0:
+                start_col = 0
+            if end_col > World.size - 1:
+                end_col = World.size - 1
             
-            #print("Start row: " + str(start_row))
-            #print("End row: " + str(end_row))
+            #print("Start col: " + str(start_col))
+            #print("End col: " + str(end_col))
 
-            tmp_row = sub_grid[i][start_row:end_row+1:1]
-            #print(tmp_row)
-            sub_grid[i] = tmp_row
+            tmp_col = sub_grid[i][start_col:end_col+1:1]
+            #print(tmp_col)
+            sub_grid[i] = tmp_col
         
         #print(sub_grid)
         print("New player coordinates:")

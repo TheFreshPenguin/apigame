@@ -1,5 +1,7 @@
 import pygame
 
+from env import *
+
 from ResourcesManager import ResourcesManager
 
 class Player:
@@ -10,7 +12,7 @@ class Player:
     
     def load_sprites(self):
         self.filename = 'characters.png'
-        self.player_spritesheet = ResourcesManager.load_spritesheet(self.filename, 12, 8)
+        self.player_spritesheet = ResourcesManager.load_spritesheet(self.filename, 8, 12)
         self.tile = self.player_spritesheet.get_tile(4, 0)
         #.get_rect()
     
@@ -37,4 +39,4 @@ class Player:
 
     def draw(self, terrain_surface, box_size):
         self.tile = pygame.transform.scale(self.tile, box_size)
-        terrain_surface.blit(self.tile, (self.local_coord[1] * self.tile.get_rect().width - self.tile.get_rect().width/2, self.local_coord[0] * self.tile.get_rect().height - self.tile.get_rect().height/2))
+        terrain_surface.blit(self.tile, (self.local_coord[POLES['HORIZONTAL']] * self.tile.get_rect().width - self.tile.get_rect().width/2, self.local_coord[POLES['VERTICAL']] * self.tile.get_rect().height - self.tile.get_rect().height/2))

@@ -8,22 +8,22 @@ DIRECTIONS = {
 }
 
 POLES = {
-    'HORIZONTAL': 0,
-    'VERTICAL': 1,
+    'VERTICAL': 0,
+    'HORIZONTAL': 1,
 }
 
 TILES = {
-    'OUT_OF_MAP': (6, 2),
-    'WATER': (5, 2),
-    'TREE_1': (6, 3),
-    'TREE_2': (6, 4),
+    'OUT_OF_MAP': (2, 6),
+    'WATER': (2, 5),
+    'TREE_1': (3, 6),
+    'TREE_2': (4, 6),
     'NORMAL_WALL': (0, 0),
-    'RED_WALL': (4, 0),
-    'STAIRS_UP': (0, 7),
-    'STAIRS_DOWN': (1, 7),
-    'GRASS_1': (0, 8),
-    'GRASS_2': (1, 8),
-    'SAND': (2, 1),
+    'RED_WALL': (0, 4),
+    'STAIRS_UP': (7, 0),
+    'STAIRS_DOWN': (7, 1),
+    'GRASS_1': (8, 0),
+    'GRASS_2': (8, 1),
+    'SAND': (1, 2),
 }
 
 WINDOW_SIZE = (512, 512)
